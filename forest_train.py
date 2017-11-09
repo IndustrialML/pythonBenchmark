@@ -40,7 +40,7 @@ def load_mnist(dataset="training", digits=np.arange(10), path="data", size = 600
 
 if __name__=="__main__":    
     images_train, labels_train = load_mnist("training")
-    n_estimators = 5
+    n_estimators = 500
 
     clf = RandomForestClassifier(n_estimators = n_estimators, max_features=28, criterion="gini")
     t0 = time()
