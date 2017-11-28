@@ -14,8 +14,9 @@ def predict_example():
     images,labels = load_mnist()    
 
     image = np.array(images[0])
-    print(labels[0])
     pred = model.predict(image.reshape(1,-1))
+    print(pred)
+    print("%s"%pred)
     return "%s"%pred[0]
 
 @app.route("/predict", methods=["POST"])

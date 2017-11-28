@@ -6,6 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.externals import joblib
 from time import time
 
+#picture = (784,) with int(0,255) where 0=white
 def load_mnist(dataset="training", digits=np.arange(10), path="data", size = 60000):
     if dataset == "training":
         fname_img = os.path.join(path, 'train-images.idx3-ubyte')
@@ -40,7 +41,7 @@ def load_mnist(dataset="training", digits=np.arange(10), path="data", size = 600
 
 if __name__=="__main__":    
     images_train, labels_train = load_mnist("training")
-    n_estimators = 500
+    n_estimators = 50
 
     clf = RandomForestClassifier(n_estimators = n_estimators, max_features=28, criterion="gini")
     t0 = time()
